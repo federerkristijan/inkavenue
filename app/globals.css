@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
+@tailwind utilities;
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #E5AF97;
+  --brand: #63B7B4;
+  --heading: #2A1E1A;
+  --text: #3B2F2A;
+  --muted: #6B4A40;
+  --light: #FFF3ED;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  color: var(--heading);
+  margin: 0 0 12px;
+}
+
+h1 {
+  font-size: clamp(36px, 5vw, 54px);
+}
+
+h2 {
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+p {
+  line-height: 1.6;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-60px); }
+}
+
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99,183,180,.25), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(255,255,255,.25), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(255,200,150,.25), transparent 40%);
+  animation: float 18s linear infinite alternate;
+  z-index: 0;
+}
+
+/* Hero Banner */
+.hero-banner {
+  min-height: 380px;
+  background-image: linear-gradient(rgba(229,175,151,.1), rgba(229,175,151,.2)), url("/media/hero-banner.jpg");
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.subheadline {
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.intro {
+  color: var(--muted);
+  max-width: 520px;
+}
+
+/* Checks list */
+.checks {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.checks li::before {
+  content: "✔";
+  color: var(--brand);
+  margin-right: 10px;
+}
+
+/* FAQ */
+details {
+  background: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+}
+
+summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Email button */
+.email {
+  display: inline-block;
+  margin-top: 14px;
+  background: var(--brand);
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* Artist image fade mask */
+.artist-mask {
+  -webkit-mask-image: linear-gradient(to top, black 75%, transparent 100%);
+  mask-image: linear-gradient(to top, black 75%, transparent 100%);
 }
