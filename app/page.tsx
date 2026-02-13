@@ -1,60 +1,106 @@
+import Image from "next/image";
+
 export default function HomePage() {
   return (
     <>
       <div className="sparkles" />
 
-      <main>
+      <main className="relative z-10 max-w-275 mx-auto px-5 pt-10 pb-20 -mt-2">
         {/* HERO */}
-        <div className="hero">
-          <div className="hero-text">
-            <h1>Fast &amp; Bold Airbrush Tattoos</h1>
-            <div className="subheadline">made live at festivals.</div>
-            <p className="intro">
-              Find your match: choose from hundreds of designs or request something unique!
-            </p>
-            <a href="#contact" className="btn">
-              Book / Find Us
-            </a>
+        <div className="relative rounded-[22px] shadow-soft overflow-hidden bg-light/60">
+          {/* Banner image */}
+          <div className="relative w-full h-100 md:h-105 lg:h-130">
+            <Image
+              src="/media/hero-banner.jpg"
+              alt="Ink Avenue hero banner"
+              fill
+              priority
+              className="object-cover object-top"
+            />
+            {/* subtle overlay for text readability */}
+            <div className="absolute inset-0 bg-black/20" />
           </div>
 
-          <div className="hero-banner" />
+          {/* Text overlay: position differs by breakpoint */}
+          <div
+            className="
+      absolute z-10 text-white
+      left-6 top-38
+      md:left-2 md:top-0
+      lg:left-6 lg:top-2
+      max-w-[18rem] md:max-w-md
+    "
+          >
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+              Fast &amp; Bold Airbrush Tattoos
+            </h1>
+
+            <div className="mt-2 font-extrabold text-lg md:text-xl">
+              made live at festivals.
+            </div>
+
+            <p className="mt-2 text-sm md:text-lg leading-relaxed">
+              Find your match: choose from hundreds of designs or request
+              something unique!
+            </p>
+          </div>
+
+          {/* Contact button: always bottom-right of the whole hero card */}
+          <a
+            href="#contact"
+            className="
+      absolute bottom-6 right-6 z-20
+      px-4 py-2 rounded-xl
+      bg-brand text-white font-bold
+      shadow-lg hover:scale-105 transition
+    "
+          >
+            Contact
+          </a>
         </div>
 
         {/* ABOUT */}
-        <section>
+        <section className="mt-16 bg-light/60 p-10 rounded-[22px] shadow-section">
           <h2>About Ink Avenue</h2>
           <p>
-            Ink Avenue is a roaming festival stall specialising in airbrush body art and temporary tattoos.
-            We create eye-catching designs in minutes using professional equipment and skin-safe products.
-            Our high-grade ink dries fast, is durable, and water-proof!
+            Ink Avenue is a roaming festival stall specialising in airbrush body
+            art and temporary tattoos. We create eye-catching designs in minutes
+            using professional equipment and skin-safe products. Our high-grade
+            ink dries fast, is durable, and water-proof!
           </p>
-          <p>Whether you want something small and subtle or a bold statement piece, we’ve got you covered.</p>
+          <p>
+            Whether you want something small and subtle or a bold statement
+            piece, we’ve got you covered.
+          </p>
         </section>
 
         {/* SERVICES */}
-        <section>
+        <section className="mt-16 bg-light/60 p-10 rounded-[22px] shadow-section">
           <h2>Services</h2>
 
-          <div className="services">
-            <div className="service-card">
+          <div className="grid md:grid-cols-3 gap-5">
+            <div className="bg-white p-6 rounded-[18px]">
               <h3>Temporary Tattoos</h3>
               <p>Quick-apply designs for arms, shoulders, legs, and more.</p>
             </div>
 
-            <div className="service-card">
+            <div className="bg-white p-6 rounded-[18px]">
               <h3>Airbrush Body Art</h3>
               <p>Creative sleeves in a wide range of styles.</p>
             </div>
 
-            <div className="service-card">
+            <div className="bg-white p-6 rounded-[18px]">
               <h3>Face Art</h3>
-              <p>No one says ‘no’ to glitter – especially when it’s bio degradable!</p>
+              <p>
+                No one says ‘no’ to glitter – especially when it’s bio
+                degradable!
+              </p>
             </div>
           </div>
         </section>
 
         {/* WHY LOVE */}
-        <section>
+        <section className="mt-16 bg-light/60 p-10 rounded-[22px] shadow-section">
           <h2>Why People Love Us</h2>
 
           <ul className="checks">
@@ -67,35 +113,43 @@ export default function HomePage() {
         </section>
 
         {/* GALLERY */}
-        <section>
+        <section className="mt-16 bg-light/60 p-10 rounded-[22px] shadow-section">
           <h2>Gallery / Designs</h2>
 
-          <div className="gallery">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://dl.dropboxusercontent.com/s/wz7rmf7l3t5rr4zyf77t3/gallery-image-1.JPG"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Image
+              className="w-full aspect-square object-cover rounded-2xl"
+              src="/media/gallery-image-1.jpg"
               alt="Airbrush tattoo design 1"
+              width={800}
+              height={800}
             />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://dl.dropboxusercontent.com/s/ytsf3ahwi61hh9qgj1fh8/Gallery-image-2.jpg"
+            <Image
+              className="w-full aspect-square object-cover rounded-2xl"
+              src="/media/gallery-image-2.jpg"
               alt="Airbrush tattoo design 2"
+              width={800}
+              height={800}
             />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://dl.dropboxusercontent.com/s/jollqk6h26y8udn2kq6z4/gallery-image-3.jpeg"
+            <Image
+              className="w-full aspect-square object-cover rounded-2xl"
+              src="/media/gallery-image-3.jpg"
               alt="Airbrush tattoo design 3"
+              width={800}
+              height={800}
             />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://dl.dropboxusercontent.com/s/d8d7rxrk04t7xenth7xem/Gallery-image-4.jpeg"
+            <Image
+              className="w-full aspect-square object-cover rounded-2xl"
+              src="/media/gallery-image-4.jpg"
               alt="Airbrush tattoo design 4"
+              width={800}
+              height={800}
             />
           </div>
         </section>
 
         {/* FAQ */}
-        <section>
+        <section className="mt-16 bg-light/60 p-10 rounded-[22px] shadow-section">
           <h2>FAQ</h2>
 
           <details>
@@ -120,14 +174,19 @@ export default function HomePage() {
         </section>
 
         {/* ARTIST + CONTACT */}
-        <div className="artist-wrap" id="contact">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+        <div
+          className="relative rounded-[22px] overflow-hidden mt-16 shadow-heavy"
+          id="contact"
+        >
+          <Image
+            className="w-full max-h-137.5 object-cover block artist-mask"
             src="https://dl.dropboxusercontent.com/s/ts6fz49spgid3pu1eblwb/artist-image.jpg"
             alt="Ink Avenue artist at work"
+            width={1200}
+            height={800}
           />
 
-          <div className="artist-overlay">
+          <div className="absolute bottom-0 left-0 right-0 p-8 bg-linear-to-t from-black/70 to-transparent text-white">
             <h3>
               Want to know where we’ll be next or book Ink Avenue for an event?
               <br />
@@ -140,7 +199,9 @@ export default function HomePage() {
           </div>
         </div>
 
-        <footer>© Ink Avenue – Festival Airbrush Body Art</footer>
+        <footer className="text-center mt-16 text-muted">
+          © Ink Avenue – Festival Airbrush Body Art
+        </footer>
       </main>
     </>
   );
