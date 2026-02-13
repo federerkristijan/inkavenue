@@ -5,25 +5,58 @@ export default function HomePage() {
     <>
       <div className="sparkles" />
 
-      <main className="relative z-10 max-w-275 mx-auto px-5 pt-10 pb-20">
+      <main className="relative z-10 max-w-275 mx-auto px-5 pt-10 pb-20 -mt-2">
         {/* HERO */}
-        <div className="grid md:grid-cols-2 gap-5 bg-light/60 rounded-[22px] shadow-soft overflow-hidden">
-          <div className="hero-text p-10">
-            <h1>Fast &amp; Bold Airbrush Tattoos</h1>
-            <div className="subheadline">made live at festivals.</div>
-            <p className="intro">
+        <div className="relative rounded-[22px] shadow-soft overflow-hidden bg-light/60">
+          {/* Banner image */}
+          <div className="relative w-full h-100 md:h-105 lg:h-130">
+            <Image
+              src="/media/hero-banner.jpg"
+              alt="Ink Avenue hero banner"
+              fill
+              priority
+              className="object-cover object-top"
+            />
+            {/* subtle overlay for text readability */}
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+
+          {/* Text overlay: position differs by breakpoint */}
+          <div
+            className="
+      absolute z-10 text-white
+      left-6 top-38
+      md:left-2 md:top-0
+      lg:left-6 lg:top-2
+      max-w-[18rem] md:max-w-md
+    "
+          >
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">
+              Fast &amp; Bold Airbrush Tattoos
+            </h1>
+
+            <div className="mt-2 font-extrabold text-lg md:text-xl">
+              made live at festivals.
+            </div>
+
+            <p className="mt-2 text-sm md:text-lg leading-relaxed">
               Find your match: choose from hundreds of designs or request
               something unique!
             </p>
-            <a
-              href="#contact"
-              className="inline-block mt-4 px-5 py-3 rounded-xl bg-brand text-white font-bold"
-            >
-              Book / Find Us
-            </a>
           </div>
 
-          <div className="hero-banner" />
+          {/* Contact button: always bottom-right of the whole hero card */}
+          <a
+            href="#contact"
+            className="
+      absolute bottom-6 right-6 z-20
+      px-4 py-2 rounded-xl
+      bg-brand text-white font-bold
+      shadow-lg hover:scale-105 transition
+    "
+          >
+            Contact
+          </a>
         </div>
 
         {/* ABOUT */}

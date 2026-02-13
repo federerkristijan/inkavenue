@@ -24,7 +24,6 @@ body {
 }
 
 h1, h2, h3 {
-  color: var(--heading);
   margin: 0 0 12px;
 }
 
@@ -59,7 +58,7 @@ p {
 
 /* Hero Banner */
 .hero-banner {
-  min-height: 380px;
+  min-height: 480px;
   background-image: linear-gradient(rgba(229,175,151,.1), rgba(229,175,151,.2)), url("/media/hero-banner.jpg");
   background-size: 100% auto;
   background-position: top center;
@@ -72,8 +71,17 @@ p {
 }
 
 .intro {
-  color: var(--muted);
   max-width: 520px;
+}
+
+/* Button hover effect */
+a.inline-block.bg-brand {
+  transition: all 0.3s ease;
+}
+
+a.inline-block.bg-brand:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 10px rgba(99, 183, 180, 0.4);
 }
 
 /* Checks list */
