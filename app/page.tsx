@@ -180,7 +180,7 @@ export default function HomePage() {
         >
           <Image
             className="w-full max-h-137.5 object-cover block artist-mask"
-            src="https://dl.dropboxusercontent.com/s/ts6fz49spgid3pu1eblwb/artist-image.jpg"
+            src="/media/artist_image.jpg"
             alt="Ink Avenue artist at work"
             width={1200}
             height={800}
