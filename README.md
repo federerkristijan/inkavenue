@@ -2,11 +2,7 @@
 
 This guide explains how to download, edit, preview, and publish the website.
 
-You do **not** need advanced technical knowledge to follow these steps.
-
----
-
-## Step 1 – Create a GitHub account
+## 1) Create a GitHub account
 
 Go to: [github](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E&source=header)
 
@@ -23,8 +19,6 @@ This downloads the project folder to your computer.
 Then enter the folder:
 
 cd inkavenue
-
----
 
 # 2) Install and Open Visual Studio Code
 
@@ -44,9 +38,17 @@ If this does not work, open VS Code manually and choose:
 
 File → Open Folder → Select the project folder.
 
----
+# 3) Install Node.js
 
-# 3) Where to Place New Images (Media)
+Go to: https://nodejs.org/en/download/prebuilt-installer
+
+Download the “LTS” (Long Term Support) version.
+
+Install it normally.
+
+Node.js automatically includes npm (Node Package Manager), which is required for this project.
+
+# 4) Where to Place New Images (Media)
 
 All images must be placed inside:
 
@@ -66,9 +68,7 @@ Important:
 * Avoid spaces in file names.
 * Use lowercase and dashes (example: `festival-photo.jpg`).
 
----
-
-# 4) Preview the Website Locally
+# 5) Preview the Website Locally
 
 Before first use, install project dependencies:
 
@@ -86,9 +86,7 @@ This is your live preview.
 
 Changes you make will automatically update in the browser.
 
----
-
-# 5) Build the Final Production Version
+# 6) Build the Final Production Version
 
 When everything is finished, run:
 
@@ -98,9 +96,7 @@ This prepares the optimized production version.
 
 If there are no errors, the build is successful.
 
----
-
-# 6) Create a Merge Request (Pull Request)
+# 7) Create a Merge Request (Pull Request)
 
 After making changes:
 
@@ -131,9 +127,7 @@ If there are no conflicts:
 * Click **Merge**
 * Confirm merge into `main`
 
----
-
-# 7) View the Website on Vercel
+# 8) View the Website on Vercel
 
 Once changes are merged into `main`:
 
@@ -147,8 +141,6 @@ https://vercel.com/kristijan-federers-projects/inkavenue
 
 If deployment fails, Vercel will show an error log.
 
----
-
 # Quick Checklist
 
 | Task                 | Command                         |
@@ -158,10 +150,6 @@ If deployment fails, Vercel will show an error log.
 | Build production     | `npm run build`               |
 | Create branch        | `git checkout -b branch-name` |
 | Push changes         | `git push origin branch-name` |
-
-
-
-
 
 
 
